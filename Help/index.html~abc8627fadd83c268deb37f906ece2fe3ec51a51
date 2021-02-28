@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-<html data-n-head-ssr>
-  <head>
-    <title>confapp</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" data-hid="description" name="description" content=""><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" href="/_nuxt/runtime.d478c59f07a720507edb.js" as="script"><link rel="preload" href="/_nuxt/commons/app.df8369c0f2fa6a1644b2.js" as="script"><link rel="preload" href="/_nuxt/vendors/app.023b81f25f3b624a7e61.js" as="script"><link rel="preload" href="/_nuxt/app.c8aab41.css" as="style"><link rel="preload" href="/_nuxt/app.3578af4d2341a01a0f65.js" as="script"><link rel="preload" href="/_nuxt/pages/Help.0e46739a376258474279.js" as="script"><link rel="stylesheet" href="/_nuxt/app.c8aab41.css"><link rel="preload" href="/_nuxt/static/1614535134/Help/state.js" as="script"><link rel="preload" href="/_nuxt/static/1614535134/Help/payload.js" as="script"><link rel="preload" href="/_nuxt/static/1614535134/manifest.js" as="script">
-  </head>
-  <body>
-    <div data-server-rendered="true" id="__nuxt"><div id="__layout"><div class="app"><!----> <!----> <h1 data-v-2d86756a>Помощь</h1></div></div></div><script defer="defer" src="/_nuxt/static/1614535134/Help/state.js"></script><script src="/_nuxt/runtime.d478c59f07a720507edb.js" defer="defer"></script><script src="/_nuxt/pages/Help.0e46739a376258474279.js" defer="defer"></script><script src="/_nuxt/commons/app.df8369c0f2fa6a1644b2.js" defer="defer"></script><script src="/_nuxt/vendors/app.023b81f25f3b624a7e61.js" defer="defer"></script><script src="/_nuxt/app.3578af4d2341a01a0f65.js" defer="defer"></script>
-  </body>
-</html>
