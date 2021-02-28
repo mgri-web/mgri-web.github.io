@@ -1,0 +1,44 @@
+@import './variables'
+
+// fonts
+fontRegular()
+  font-family 'Roboto', Helvetica, sans-serif
+  font-weight normal
+  font-style normal
+
+fontRegIt()
+  font-family 'Roboto', Helvetica, sans-serif
+  font-weight normal
+  font-style italic
+
+fontMedium()
+  font-family 'Roboto', Helvetica, sans-serif
+  font-weight 500
+  font-style normal
+
+fontBold()
+  font-family 'Roboto', Helvetica, sans-serif
+  font-weight bold
+  font-style normal
+
+fontBlack()
+  font-family 'Roboto', Helvetica, sans-serif
+  font-weight 900
+  font-style normal
+
+// other mixins
+debug()
+  background-color rgba(red, .33) !important
+
+outlineDebug()
+  outline 3px solid rgba(red, .33) !important
+
+hover()
+  &:hover
+    html.desktop &
+      {block}
+
+flexCenter()
+  display flex
+  justify-content center
+  align-items center
