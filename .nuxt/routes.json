@@ -1,0 +1,16 @@
+[
+  {
+    "name": "index___en",
+    "path": "/en",
+    "component": "E:\\\\mgri\\\\mgri-web.github.io\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_ec615a06"
+  },
+  {
+    "name": "index___ru",
+    "path": "/",
+    "component": "E:\\\\mgri\\\\mgri-web.github.io\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_ec615a06"
+  }
+]
