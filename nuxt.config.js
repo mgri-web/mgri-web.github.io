@@ -2,6 +2,7 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
   ssr: true, // Enable Server Side rendering
+  modern: 'server',
 
   // html global tag attrs
   htmlAttrs: {
