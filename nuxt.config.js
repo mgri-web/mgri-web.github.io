@@ -61,7 +61,7 @@ export default {
       defaultLocale: 'ru',
       detectBrowserLanguage: {
         useCookie: true,
-        alwaysRedirect: true // англ только для англ!
+        alwaysRedirect: false, // англ только для англ!
       },
       locales: [
         {
