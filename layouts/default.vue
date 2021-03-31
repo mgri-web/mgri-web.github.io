@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <FixedBackground />
     <transition>
       <LoadingBar v-if="showLoadingBar" />
     </transition>
@@ -14,12 +15,14 @@
 import Vue from 'vue'
 import LoadingBar from '~/components/LoadingBar.vue'
 import InformBanner from '~/components/InformBanner.vue'
+import FixedBackground from '~/components/FixedBackground.vue'
 
 export default Vue.extend({
   name: 'Default',
   components: {
     LoadingBar,
-    InformBanner
+    InformBanner,
+    FixedBackground,
   },
   computed: {
     showLoadingBar (): boolean {

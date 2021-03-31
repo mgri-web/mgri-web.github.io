@@ -2,7 +2,7 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
   ssr: true, // Enable Server Side rendering
-  modern: 'server',
+  // modern: 'server',
 
   // html global tag attrs
   htmlAttrs: {
@@ -62,7 +62,7 @@ export default {
       defaultLocale: 'ru',
       detectBrowserLanguage: {
         useCookie: true,
-        alwaysRedirect: false, // англ только для англ!
+        alwaysRedirect: false // англ только для англ!
       },
       locales: [
         {

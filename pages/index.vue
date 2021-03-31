@@ -21,10 +21,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   layout: 'default',
-  // ост
-  mounted () {
-    console.log(this.$i18n.locale)
-  },
+
   // мета
   head () {
     return {
