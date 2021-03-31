@@ -25,9 +25,9 @@ export default Vue.extend({
   // мета
   head () {
     return {
-      title: String(this.$t('pageTitle'))
+      title: String(this.$t('pageTitle')),
     }
-  }
+  },
 })
 </script>
 

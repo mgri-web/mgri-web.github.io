@@ -38,9 +38,9 @@ export default Vue.extend({
   layout: 'error',
   head () {
     return {
-      title: String(this.$t('title'))
+      title: String(this.$t('title')),
     }
-  }
+  },
 })
 </script>
 

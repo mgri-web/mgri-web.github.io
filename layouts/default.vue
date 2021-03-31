@@ -33,8 +33,8 @@ export default Vue.extend({
     },
     informMessage ():String {
       return this.$accessor.ui.informText
-    }
-  }
+    },
+  },
 })
 </script>
 

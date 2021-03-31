@@ -12,13 +12,13 @@ export default Vue.extend({
   data () {
     return {
       progress: 0,
-      intervalContainer: null
+      intervalContainer: null,
     }
   },
   computed: {
     isDone ():Boolean {
       return this.$accessor.ui.loadingDone
-    }
+    },
   },
   mounted () {
     let period = 500
@@ -41,7 +41,7 @@ export default Vue.extend({
   },
   beforeDestroy () {
     clearInterval(this.intervalContainer)
-  }
+  },
 })
 </script>
 

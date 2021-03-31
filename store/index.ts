@@ -5,6 +5,6 @@ import * as ui from '~/store/ui.ts'
 // This compiles to nothing and only serves to return the correct type of the accessor
 export const accessorType = getAccessorType({
   modules: {
-    ui
-  }
+    ui,
+  },
 })

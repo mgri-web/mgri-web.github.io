@@ -57,6 +57,20 @@ export default Vue.extend({
         position: 'top-66 left-39',
         direction: 'normal',
       },
+      {
+        size: 'xl',
+        color: '#00aa99',
+        duration: 38,
+        position: 'top-25 left-77',
+        direction: 'normal',
+      },
+      {
+        size: 'lg',
+        color: '#fa3b56',
+        duration: 88,
+        position: 'top-22 left-10',
+        direction: 'reverse',
+      },
     ],
   }),
 })
@@ -72,9 +86,9 @@ export default Vue.extend({
     bottom 0
     left 0
     right 0
-    z-index -1
-    pointer-events none
-    user-select none
+    //z-index -1
+    //pointer-events none
+    //user-select none
     overflow hidden
 
   &-blob
@@ -133,7 +147,7 @@ export default Vue.extend({
  100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
 }
 
-for num in (30..80)
+for num in (0..90)
   .top-{num}
     top: num * 1%
   .left-{num}

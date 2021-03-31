@@ -13,7 +13,7 @@ export const state = () => ({
   loadingBar: false as boolean,
   loadingDone: false as boolean,
   errorText: null as String,
-  informText: null as String
+  informText: null as String,
 })
 
 export const mutations = mutationTree(state, {
@@ -37,5 +37,5 @@ export const mutations = mutationTree(state, {
   },
   setInformText (state, payload: String) {
     state.informText = payload
-  }
+  },
 })

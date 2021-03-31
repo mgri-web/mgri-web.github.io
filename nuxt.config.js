@@ -6,7 +6,7 @@ export default {
 
   // html global tag attrs
   htmlAttrs: {
-    lang: 'ru'
+    lang: 'ru',
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -14,28 +14,28 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '@/styles/app.styl'
+    '@/styles/app.styl',
   ],
 
   // autoimport
   styleResources: {
     stylus: [
-      '@/styles/tools.styl'
-    ]
+      '@/styles/tools.styl',
+    ],
   },
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: '@/plugins/viewportSizeHandler', ssr: false }
+    { src: '@/plugins/viewportSizeHandler', ssr: false },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -45,7 +45,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    'nuxt-typed-vuex'
+    'nuxt-typed-vuex',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -62,25 +62,25 @@ export default {
       defaultLocale: 'ru',
       detectBrowserLanguage: {
         useCookie: true,
-        alwaysRedirect: false // англ только для англ!
+        alwaysRedirect: false, // англ только для англ!
       },
       locales: [
         {
           code: 'en',
-          iso: 'en-US'
+          iso: 'en-US',
         },
         {
           code: 'ru',
-          iso: 'ru-RU'
-        }
-      ]
-    }]
+          iso: 'ru-RU',
+        },
+      ],
+    }],
   ],
 
   // server configs
   server: {
     port: 4242,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
   },
 
   // loading, set custom
@@ -90,7 +90,7 @@ export default {
   // https://sentry.nuxtjs.org/sentry/options
   sentry: {
     dsn: 'https://6b550a70d77a455bbcb3a3d5e3adb86f@o500249.ingest.sentry.io/5579810', // Enter your project's DSN here
-    config: {} // Additional config
+    config: {}, // Additional config
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -121,8 +121,8 @@ export default {
         removeEmptyAttributes: false,
         removeRedundantAttributes: false,
         trimCustomFragments: false,
-        useShortDoctype: false
-      }
-    }
-  }
+        useShortDoctype: false,
+      },
+    },
+  },
 }

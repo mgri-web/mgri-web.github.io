@@ -17,8 +17,8 @@ export default Vue.extend({
   props: {
     text: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     errorMessage ():String {
@@ -26,7 +26,7 @@ export default Vue.extend({
     },
     informMessage ():String {
       return this.$accessor.ui.informText
-    }
+    },
   },
   mounted () {
     setTimeout(() => {
@@ -37,8 +37,8 @@ export default Vue.extend({
     closeBanner () {
       this.$accessor.ui.setErrorText(null)
       this.$accessor.ui.setInformText(null)
-    }
-  }
+    },
+  },
 })
 </script>
 

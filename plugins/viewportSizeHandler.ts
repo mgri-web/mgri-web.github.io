@@ -26,7 +26,7 @@ export default ({ store } : {store: any}) => {
       windowHeight: innerHeight,
       documentWidth: offsetWidth,
       documentHeight: offsetHeight,
-      scrollbarWidth
+      scrollbarWidth,
     }
 
     store.$accessor.ui.updateViewportInfo(viewportInfo)
