@@ -1,8 +1,5 @@
 <template>
-  <div class="page">
-    <h1 v-text="$t('pageTitle')" />
-    <nuxt-link to="/help" />
-  </div>
+  <div class="page" />
 </template>
 
 <i18n>

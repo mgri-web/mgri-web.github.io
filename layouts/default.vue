@@ -1,6 +1,8 @@
 <template>
   <div class="app">
-    <FixedBackground />
+    <transition name="fade" mode="out-in">
+      <FixedBackground v-if="showBalls" />
+    </transition>
     <transition>
       <LoadingBar v-if="showLoadingBar" />
     </transition>
@@ -27,6 +29,10 @@ export default Vue.extend({
     FixedBackground,
   },
 
+  data: () => ({
+    showBalls: false,
+  }),
+
   computed: {
     showLoadingBar (): boolean {
       return this.$accessor.ui.loadingBar
@@ -41,6 +47,7 @@ export default Vue.extend({
 
   mounted () {
     if (!process.client) { return }
+    this.showBalls = true
     setTimeout(() => {
       AOS.init({
         once: true,
