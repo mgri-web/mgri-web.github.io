@@ -13,6 +13,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import LoadingBar from '~/components/LoadingBar.vue'
 import InformBanner from '~/components/InformBanner.vue'
 import FixedBackground from '~/components/FixedBackground.vue'
@@ -24,6 +26,7 @@ export default Vue.extend({
     InformBanner,
     FixedBackground,
   },
+
   computed: {
     showLoadingBar (): boolean {
       return this.$accessor.ui.loadingBar
@@ -34,6 +37,15 @@ export default Vue.extend({
     informMessage ():String {
       return this.$accessor.ui.informText
     },
+  },
+
+  mounted () {
+    if (!process.client) { return }
+    setTimeout(() => {
+      AOS.init({
+        once: true,
+      })
+    }, 1700)
   },
 })
 </script>
