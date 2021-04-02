@@ -157,9 +157,9 @@ export default Vue.extend({
     bottom 0
     left 0
     right 0
-    //z-index -1
-    //pointer-events none
-    //user-select none
+    z-index -1
+    pointer-events none
+    user-select none
     overflow hidden
 
   &-blob
