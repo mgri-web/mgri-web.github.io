@@ -6,7 +6,6 @@
         {{ $t('pageTitle') }}
         <div
           ref="baffle"
-          v-text="$t('pageTitleBaffleInit')"
         />
       </h1>
     </div>
@@ -16,14 +15,10 @@
 <i18n>
 {
   "en": {
-    "pageTitle": "Intro to",
-    "pageTitleBaffleInit": "web development",
-    "pageTitleBaffleDone": "software development"
+    "pageTitle": "Intro to"
   },
   "ru": {
-    "pageTitle": "Введение в",
-    "pageTitleBaffleInit": "веб-разработку",
-    "pageTitleBaffleDone": "программирование"
+    "pageTitle": "Введение в"
   }
 }
 </i18n>
@@ -38,9 +33,15 @@ export default Vue.extend({
 
   data: () => ({
     baffleEl: null,
+    titleTextIndex: 0 as number,
+    titleText: {
+      en: ['web development', 'software development'],
+      ru: ['веб-разработку', 'программирование'],
+    },
   }),
 
   methods: {
+    // Зобрал с Себура, ибо коротко и то, что нужно
     initBaffle () {
       const baffleELement = this.$refs.baffle
       const parameters = {
@@ -49,6 +50,20 @@ export default Vue.extend({
       }
 
       this.baffleEl = baffle(baffleELement).set(parameters)
+    },
+    sleep (ms: number): Promise<boolean> {
+      return new Promise(resolve => setTimeout(resolve, ms))
+    },
+    animateText () {
+      // baffle.text(t => this.getTitleTextNext())
+      baffle.reveal(1000)
+    },
+    getTitleTextNext () {
+      const locale = this.$i18n.locale
+      // ТС не может в обращение такое, по ходу
+      // @ts-ignore
+      const currentTextArray: Array<string> = this.titleTextIndex[locale]
+      const currentIndex = (this.titleTextIndex < currentTextArray.length) ? 0 : 1
     },
   },
 

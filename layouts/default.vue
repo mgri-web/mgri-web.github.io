@@ -9,14 +9,15 @@
     <transition>
       <InformBanner v-if="errorMessage || informMessage" />
     </transition>
+    <!--    сама страничка-->
     <Nuxt />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+// import AOS from 'aos'
+// import 'aos/dist/aos.css'
 import LoadingBar from '~/components/LoadingBar.vue'
 import InformBanner from '~/components/InformBanner.vue'
 import FixedBackground from '~/components/FixedBackground.vue'
@@ -48,11 +49,12 @@ export default Vue.extend({
   mounted () {
     if (!process.client) { return }
     this.showBalls = true
-    setTimeout(() => {
-      AOS.init({
-        once: true,
-      })
-    }, 1700)
+    console.log(this.$i18n.locale)
+    // setTimeout(() => {
+    //   AOS.init({
+    //     once: true,
+    //   })
+    // }, 1700)
   },
 })
 </script>
