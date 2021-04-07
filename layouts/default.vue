@@ -38,6 +38,7 @@ export default Vue.extend({
   },
 
   mounted () {
+    // eslint-disable-next-line nuxt/no-env-in-hooks
     if (!process.client) { return }
     setTimeout(() => {
       AOS.init({
