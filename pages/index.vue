@@ -25,6 +25,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+// TS ругается на типы, их в баффл не завезли =\
 // @ts-ignore
 import baffle from 'baffle'
 
