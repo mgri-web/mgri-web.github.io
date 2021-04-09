@@ -86,5 +86,6 @@ export default Vue.extend({
 </script>
 
 <style lang="stylus">
-
+.page__title
+  fontSemiBold()
 </style>
