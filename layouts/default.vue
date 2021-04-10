@@ -6,6 +6,9 @@
     <transition>
       <InformBanner v-if="errorMessage || informMessage" />
     </transition>
+    <transition>
+      <FullscreenPopup v-if="popUpContent" />
+    </transition>
     <!--    сама страничка-->
     <Nuxt />
   </div>
@@ -17,12 +20,14 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import LoadingBar from '~/components/LoadingBar.vue'
 import InformBanner from '~/components/InformBanner.vue'
+import FullscreenPopup from '~/components/PopUp/FullscreenPopup.vue'
 
 export default Vue.extend({
   name: 'Default',
   components: {
     LoadingBar,
     InformBanner,
+    FullscreenPopup,
   },
 
   computed: {
@@ -35,6 +40,14 @@ export default Vue.extend({
     informMessage ():String {
       return this.$accessor.ui.informText
     },
+    popUpContent () {
+      return this.$accessor.ui.popupContent
+    },
+  },
+
+  created () {
+    // хз, некогда разбираться
+    this.$accessor.ui.setPopupContent(null)
   },
 
   mounted () {

@@ -18,6 +18,10 @@
         <!-- Buttons -->
         <div class="promo__cta">
           <CTAButton />
+          <div class="promo__alma" @click="openPopUp">
+            <img src="/svg/play.svg" alt="Play" class="promo__alma-img">
+            <p class="promo__alma-text" v-text="$t('almaVideoText')" />
+          </div>
         </div>
       </div>
       <!-- Разраб temp -->
@@ -35,14 +39,16 @@
     "pageSubtitle": "web development",
     "pageDescription": "Learn to create modern websites and applications at",
     "almaLinkText": "Russian State University for Geological Prospecting",
-    "almaLink": "https://mgri.ru/en/"
+    "almaLink": "https://mgri.ru/en/",
+    "almaVideoText": "Promo-video"
   },
   "ru": {
     "pageTitle": "Введение в",
     "pageSubtitle": "веб-разработку",
     "pageDescription": "Научитесь создавать современные сайты и приложения в",
     "almaLinkText": "РГГРУ им. Серго Орджоникидзе",
-    "almaLink": "https://mgri.ru/"
+    "almaLink": "https://mgri.ru/",
+    "almaVideoText": "Посмотреть видео"
   }
 }
 </i18n>
@@ -69,7 +75,6 @@ export default Vue.extend({
       en: ['web development', 'software development'],
       ru: ['веб-разработку', 'программирование'],
     },
-
   }),
 
   mounted () {
@@ -79,6 +84,7 @@ export default Vue.extend({
   },
 
   methods: {
+    // Baffle
     // Зобрал с Себура, ибо коротко и то, что нужно
     initBaffle () {
       const baffleELement = this.$refs.baffle
@@ -114,6 +120,11 @@ export default Vue.extend({
         loopAnimateText()
       }
       loopAnimateText()
+    },
+
+    // PopUp
+    openPopUp () {
+      this.$accessor.ui.setPopupContent('video')
     },
   },
 
@@ -157,4 +168,23 @@ export default Vue.extend({
 
   &__cta
     display flex
+    flex-direction column
+    align-items center
+
+    @media (min-width 768px)
+      flex-direction row
+
+  &__alma
+    cursor pointer
+    margin-top 15px
+    text-decoration underline
+    text-decoration-color #FF9900
+    display flex
+
+    @media (min-width 768px)
+      margin-top 0
+      margin-left 30px
+
+    &-img
+      margin-right 8px
 </style>

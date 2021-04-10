@@ -14,6 +14,7 @@ export const state = () => ({
   loadingDone: false as boolean,
   errorText: null as String,
   informText: null as String,
+  popupContent: null as 'goto' || 'video',
 })
 
 export const mutations = mutationTree(state, {
@@ -37,5 +38,8 @@ export const mutations = mutationTree(state, {
   },
   setInformText (state, payload: String) {
     state.informText = payload
+  },
+  setPopupContent (state, payload: string) {
+    state.popupContent = payload
   },
 })

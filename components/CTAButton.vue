@@ -1,5 +1,5 @@
 <template>
-  <div class="cta">
+  <div class="cta" @click="openPopUp">
     <p class="cta__text" v-text="$t('ctaText')" />
   </div>
 </template>
@@ -23,6 +23,11 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'CTAButton',
 
+  methods: {
+    openPopUp () {
+      this.$accessor.ui.setPopupContent('goto')
+    },
+  },
 })
 </script>
 
@@ -35,6 +40,7 @@ export default Vue.extend({
   font-size 16px
   display inline-flex
   cursor pointer
+  will-change transform
   transition-property all
   transition-timing-function ease-in-out
   transition-duration .3s
