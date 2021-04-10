@@ -128,6 +128,7 @@ export default Vue.extend({
     flex-shrink 0
     +gt-lg()
       width 40%
+      padding-top 100px
 
   &__image
     display flex
