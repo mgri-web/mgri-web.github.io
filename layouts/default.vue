@@ -6,7 +6,7 @@
     <transition>
       <InformBanner v-if="errorMessage || informMessage" />
     </transition>
-    <transition>
+    <transition name="appear">
       <FullscreenPopup v-if="popUpContent" />
     </transition>
     <!--    сама страничка-->

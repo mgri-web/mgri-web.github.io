@@ -11,6 +11,19 @@
   transition-duration  0.3s
   transition-timing-function ease-in-out
 
+
+.appear-enter
+.appear-leave-to
+  opacity 0
+  transform scale(.1, .1)
+  backdrop-filter none
+
+.appear-enter-active
+.appear-leave-active
+  transition-property opacity transform
+  transition-duration  0.3s
+  transition-timing-function ease-in-out
+
 @keyframes calltoaction {
   0% {
     transform translate3d(0, 0, 0)

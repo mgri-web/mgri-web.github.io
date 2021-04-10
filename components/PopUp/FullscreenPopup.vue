@@ -57,6 +57,7 @@ export default Vue.extend({
   flex-direction column
   justify-content center
   padding 50px 25px
+  will-change transform opacity backdrop-filter
 
   &__content
     margin 0 auto
