@@ -1,20 +1,26 @@
 <template>
   <section class="promo">
     <div class="container flex-desc">
-      <!-- Тайтол -->
       <div class="promo__block">
+        <!-- Из-за баффла сложно выносить в отдельный компонент -->
+        <!-- Тайтол -->
         <h1 class="promo__title">
           {{ $t('pageTitle') }}
           <br>
           <span ref="baffle">{{ $t('pageSubtitle') }}</span>
         </h1>
+        <!-- Descr -->
         <div class="promo__description">
           <p class="promo__description-text">
-            {{ $t('pageDescription') }} <a class="promo__description-link" :href="$t('almaLink')" title="Mente et Malleo" v-text="$t('almaLinkText')" />
+            {{ $t('pageDescription') }} <a class="promo__description-link" :href="$t('almaLink')" title="Mente et Malleo" target="_blank" v-text="$t('almaLinkText')" />
           </p>
         </div>
+        <!-- Buttons -->
+        <div class="promo__cta">
+          <CTAButton />
+        </div>
       </div>
-      <!-- Разраб -->
+      <!-- Разраб temp -->
       <div class="promo__image">
         <img src="/svg/web-monkey.svg" alt="Web-developer">
       </div>
@@ -47,9 +53,14 @@ import random from 'lodash.random'
 // @ts-ignore
 import baffle from 'baffle'
 import Vue from 'vue'
+import CTAButton from '~/components/CTAButton.vue'
 
 export default Vue.extend({
   name: 'SectionPromo',
+
+  components: {
+    CTAButton,
+  },
 
   data: () => ({
     baffleEl: null,
@@ -135,6 +146,7 @@ export default Vue.extend({
     fontRegular()
     +gt-lg()
       font-size 18px
+      margin-bottom 45px
 
     &-link
       fontSemiBold()
@@ -142,4 +154,6 @@ export default Vue.extend({
       text-decoration underline
       text-decoration-color #FF9900
 
+  &__cta
+    display flex
 </style>
