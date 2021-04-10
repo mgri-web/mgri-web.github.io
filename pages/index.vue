@@ -1,14 +1,24 @@
 <!--suppress ES6UnusedImports, TypeScriptCheckImport -->
 <template>
   <div class="page">
-    <div class="container">
-      <h1 class="page__title">
-        {{ $t('pageTitle') }}
-        <div
-          ref="baffle"
-        />
-      </h1>
-    </div>
+    <section class="promo">
+      <div class="container flex-desc">
+        <!-- Тайтол -->
+        <div class="page__block">
+          <h1 class="page__title">
+            {{ $t('pageTitle') }}
+            <br>
+            <span
+              ref="baffle"
+            />
+          </h1>
+        </div>
+        <!-- Разраб -->
+        <div class="page__image">
+          <img src="/svg/web-monkey.svg" alt="Web-developer">
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -86,6 +96,11 @@ export default Vue.extend({
 </script>
 
 <style lang="stylus">
-.page__title
-  fontSemiBold()
+.page
+  padding-top 100px
+
+  &__title
+    fontSemiBold()
+    +gt-lg()
+      font-size 44px
 </style>
