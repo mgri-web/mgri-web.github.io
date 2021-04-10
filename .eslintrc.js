@@ -13,5 +13,6 @@ module.exports = {
   // add your custom rules here
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
+    'nuxt/no-env-in-hooks': 0,
   },
 }

@@ -8,9 +8,7 @@
           <h1 class="page__title">
             {{ $t('pageTitle') }}
             <br>
-            <span
-              ref="baffle"
-            />
+            <span ref="baffle">{{ $t('pageSubtitle') }}</span>
           </h1>
         </div>
         <!-- Разраб -->
@@ -25,16 +23,19 @@
 <i18n>
 {
   "en": {
-    "pageTitle": "Intro to"
+    "pageTitle": "Intro to",
+    "pageSubtitle": "web development"
   },
   "ru": {
-    "pageTitle": "Введение в"
+    "pageTitle": "Введение в",
+    "pageSubtitle": "веб-разработку"
   }
 }
 </i18n>
 
 <script lang="ts">
 import Vue from 'vue'
+import random from 'lodash.random'
 // TS ругается на типы, их в баффл не завезли =\
 // @ts-ignore
 import baffle from 'baffle'
@@ -51,6 +52,13 @@ export default Vue.extend({
     },
   }),
 
+  mounted () {
+    if (!process.client) { return }
+
+    this.initBaffle()
+    this.initLogoTextAnimation()
+  },
+
   methods: {
     // Зобрал с Себура, ибо коротко и то, что нужно
     initBaffle () {
@@ -59,23 +67,37 @@ export default Vue.extend({
         characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ',
         speed: 40,
       }
-
       this.baffleEl = baffle(baffleELement).set(parameters)
     },
     sleep (ms: number): Promise<boolean> {
       return new Promise(resolve => setTimeout(resolve, ms))
     },
     animateText () {
-      // baffle.text(t => this.getTitleTextNext())
-      baffle.reveal(1000)
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      this.baffleEl.text((t:any) => this.getTitleTextNext())
+      this.baffleEl.reveal(1000)
     },
-    getTitleTextNext () {
+    getTitleTextNext ():string {
       const locale = this.$i18n.locale
-      // ТС не может в обращение такое, по ходу
+      // ТС не может в обращение по индексу такое, по ходу
       // @ts-ignore
-      const currentTextArray: Array<string> = this.titleTextIndex[locale]
-      const currentIndex = (this.titleTextIndex < currentTextArray.length) ? 0 : 1
+      const currentTextArray: Array<string> = this.titleText[locale]
+      const currentIndex = (this.titleTextIndex === (currentTextArray.length - 1)) ? 0 : (currentTextArray.length - 1)
+
+      this.titleTextIndex = currentIndex
+      // @ts-ignore
+      return this.titleText[locale][currentIndex]
     },
+    initLogoTextAnimation () {
+      const loopAnimateText = async () => {
+        await this.sleep(random(4000, 5000))
+        this.animateText()
+        loopAnimateText()
+      }
+
+      loopAnimateText()
+    },
+
   },
 
   // мета
