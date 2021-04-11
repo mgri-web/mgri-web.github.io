@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/", {data:[{}],fetch:[],mutations:[["ui\u002FsetPopupContent",null]]});
