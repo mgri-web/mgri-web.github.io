@@ -50,6 +50,6 @@ export default Vue.extend({
   animation-delay 3s
 
   &:hover
-    transform translate3d(0, -20px, 0)
+    transform translate3d(0, -20px, 0) scale(1.1, 1.1)
     animation none
 </style>

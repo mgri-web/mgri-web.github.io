@@ -17,7 +17,7 @@
         </div>
         <!-- Buttons -->
         <div class="promo__cta">
-          <CTAButton />
+          <CTAButton class="promo__cta-button" />
           <div class="promo__alma" @click="openPopUp">
             <img src="/svg/play.svg" alt="Play" class="promo__alma-img">
             <p class="promo__alma-text" v-text="$t('almaVideoText')" />
@@ -139,7 +139,7 @@ export default Vue.extend({
     flex-shrink 0
     +gt-lg()
       width 40%
-      padding-top 100px
+      padding-top 80px
 
   &__image
     display flex
@@ -152,19 +152,24 @@ export default Vue.extend({
     fontBold()
     +gt-lg()
       font-size 44px
-      margin-bottom 30px
+      margin-bottom 45px
 
   &__description
     fontRegular()
     +gt-lg()
       font-size 18px
-      margin-bottom 45px
+      margin-bottom 65px
 
     &-link
       fontSemiBold()
       color #7752BE
       text-decoration underline
       text-decoration-color #FF9900
+      transition background-color .3s ease-in-out, color .3s ease-in-out
+
+      &:hover
+        background-color blue
+        color white
 
   &__cta
     display flex
@@ -174,16 +179,24 @@ export default Vue.extend({
     @media (min-width 768px)
       flex-direction row
 
+    &-button
+      margin-bottom 20px
+
+      @media (min-width 768px)
+        margin-bottom 0
+        margin-right 40px
+
   &__alma
     cursor pointer
-    margin-top 15px
     text-decoration underline
     text-decoration-color #FF9900
     display flex
+    padding 25px
+    margin -25px
+    transition transform .3s ease-in-out
 
-    @media (min-width 768px)
-      margin-top 0
-      margin-left 30px
+    &:hover
+      transform scale(1.1, 1.1)
 
     &-img
       margin-right 8px
