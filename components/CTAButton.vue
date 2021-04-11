@@ -1,21 +1,8 @@
 <template>
-  <div class="cta" @click="openPopUp">
-    <p class="cta__text" v-text="$t('ctaText')" />
+  <div class="cta">
+    <p class="cta__text" v-text="text" />
   </div>
 </template>
-
-<i18n>
-{
-  "en": {
-    "ctaText": "Get started",
-    "ctaLink": "https://inter-mgri.ru/contacts/"
-  },
-  "ru": {
-    "ctaText": "Записаться",
-    "ctaLink": "https://inter-mgri.ru/contacts/"
-  }
-}
-</i18n>
 
 <script lang="ts">
 import Vue from 'vue'
@@ -23,11 +10,13 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'CTAButton',
 
-  methods: {
-    openPopUp () {
-      this.$accessor.ui.setPopupContent('goto')
+  props: {
+    text: {
+      type: String,
+      default: '',
     },
   },
+
 })
 </script>
 
@@ -36,12 +25,10 @@ export default Vue.extend({
   border-radius 4px
   background-color #00FF66
   padding 15px 30px
-  fontSemiBold()
-  font-size 16px
   display inline-flex
   cursor pointer
-  will-change transform
-  transition-property all
+  will-change animation
+  transition-property transform
   transition-timing-function ease-in-out
   transition-duration .3s
   animation-name calltoaction
@@ -52,4 +39,9 @@ export default Vue.extend({
   &:hover
     transform translate3d(0, -20px, 0) scale(1.1, 1.1)
     animation none
+
+  &__text
+    fontSemiBold()
+    color white
+    font-size 16px
 </style>

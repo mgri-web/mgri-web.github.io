@@ -17,8 +17,8 @@
         </div>
         <!-- Buttons -->
         <div class="promo__cta">
-          <CTAButton class="promo__cta-button" />
-          <div class="promo__alma" @click="openPopUp">
+          <CTAButton class="promo__cta-button" :text="$t('ctaText')" @click.native="openPopUp('goto')" />
+          <div class="promo__alma" @click="openPopUp('video')">
             <img src="/svg/play.svg" alt="Play" class="promo__alma-img">
             <p class="promo__alma-text" v-text="$t('almaVideoText')" />
           </div>
@@ -40,7 +40,8 @@
     "pageDescription": "Learn to create modern websites and applications at",
     "almaLinkText": "Russian State University for Geological Prospecting",
     "almaLink": "https://mgri.ru/en/",
-    "almaVideoText": "Promo-video"
+    "almaVideoText": "Promo-video",
+    "ctaText": "Get started"
   },
   "ru": {
     "pageTitle": "Введение в",
@@ -48,7 +49,8 @@
     "pageDescription": "Научитесь создавать современные сайты и приложения в",
     "almaLinkText": "РГГРУ им. Серго Орджоникидзе",
     "almaLink": "https://mgri.ru/",
-    "almaVideoText": "Посмотреть видео"
+    "almaVideoText": "Посмотреть видео",
+    "ctaText": "Записаться"
   }
 }
 </i18n>
@@ -123,8 +125,8 @@ export default Vue.extend({
     },
 
     // PopUp
-    openPopUp () {
-      this.$accessor.ui.setPopupContent('video')
+    openPopUp (payload: string) {
+      this.$accessor.ui.setPopupContent(payload)
     },
   },
 

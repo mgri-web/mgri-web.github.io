@@ -14,12 +14,14 @@
 <script lang="ts">
 import Vue from 'vue'
 import AlmaVideo from '~/components/PopUp/AlmaVideo.vue'
+import GotoBlock from '~/components/PopUp/GotoBlock.vue'
 
 export default Vue.extend({
   name: 'FullscreenPopup',
 
   components: {
     AlmaVideo,
+    GotoBlock,
   },
 
   computed: {
@@ -33,6 +35,8 @@ export default Vue.extend({
       switch (type) {
         case 'video':
           return AlmaVideo
+        case 'goto':
+          return GotoBlock
         default:
           return null
       }
@@ -63,6 +67,9 @@ export default Vue.extend({
     margin 0 auto
     width 100%
     max-width 1000px
+    padding 0 25px
+    display flex
+    justify-content center
 
   &__helper
     position absolute

@@ -1,4 +1,3 @@
-<!--suppress ES6UnusedImports, TypeScriptCheckImport -->
 <template>
   <div class="page">
     <SectionPromo />
