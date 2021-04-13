@@ -64,16 +64,14 @@ export default Vue.extend({
     color #00FF66
     fontBold()
     text-align center
-    +gt-lg()
-      font-size 30px
-      margin-bottom 35px
+    font-size 30px
+    margin-bottom 35px
 
   &__descr
     fontRegular()
     text-align center
-    +gt-lg()
-      font-size 18px
-      margin-bottom 40px
+    font-size 18px
+    margin-bottom 40px
 
   &__buttons
     display flex
@@ -97,4 +95,5 @@ export default Vue.extend({
     cursor pointer
     padding 20px
     margin -20px
+    font-size 18px
 </style>

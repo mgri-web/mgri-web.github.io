@@ -139,6 +139,13 @@ export default Vue.extend({
   &__block
     width 100%
     flex-shrink 0
+    overflow visible
+    +md()
+      padding-top 40px
+      margin-bottom 20px
+    +lg()
+      width 40%
+      padding-top 80px
     +gt-lg()
       width 40%
       padding-top 80px
@@ -146,18 +153,38 @@ export default Vue.extend({
   &__image
     display flex
     justify-content center
+    width 100%
+    +lg()
+      justify-content flex-end
     +gt-lg()
-      width 100%
       justify-content flex-end
 
   &__title
     fontBold()
+    will-change contents
+    +lt-md()
+      font-size 50px
+      margin-bottom 40px
+    +md()
+      font-size 50px
+      margin-bottom 40px
+    +lg()
+      font-size 44px
+      margin-bottom 45px
     +gt-lg()
       font-size 44px
       margin-bottom 45px
 
   &__description
     fontRegular()
+    font-size 16px
+    margin-bottom 40px
+    +md()
+      font-size 20px
+      margin-bottom 40px
+    +lg()
+      font-size 18px
+      margin-bottom 65px
     +gt-lg()
       font-size 18px
       margin-bottom 65px
