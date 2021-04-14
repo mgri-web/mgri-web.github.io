@@ -79,6 +79,12 @@ export default Vue.extend({
     },
   }),
 
+  computed: {
+    isMobile () {
+      return this.$accessor.ui.windowWidth < 375
+    },
+  },
+
   mounted () {
     if (!process.client) { return }
     this.initBaffle()
@@ -87,7 +93,7 @@ export default Vue.extend({
 
   methods: {
     // Baffle
-    // Зобрал с Себура, ибо коротко и то, что нужно
+    // Зобрал с Себура, ибо всё по документации
     initBaffle () {
       const baffleELement = this.$refs.baffle
       const parameters = {
@@ -161,8 +167,11 @@ export default Vue.extend({
 
   &__title
     fontBold()
-    will-change contents
-    +lt-md()
+    will-change contents3
+    +xs()
+      font-size 30px
+      margin-bottom 40px
+    +sm()
       font-size 50px
       margin-bottom 40px
     +md()
