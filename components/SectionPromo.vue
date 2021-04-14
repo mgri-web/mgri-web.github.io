@@ -169,7 +169,7 @@ export default Vue.extend({
 
   &__title
     fontBold()
-    will-change contents3
+    will-change contents
     +xs()
       font-size 30px
       margin-bottom 40px
@@ -202,9 +202,9 @@ export default Vue.extend({
 
     &-link
       fontSemiBold()
-      color #7752BE
+      color $purple
       text-decoration underline
-      text-decoration-color #FF9900
+      text-decoration-color $orange
       transition background-color .3s ease-in-out, color .3s ease-in-out
 
       &:hover
@@ -229,7 +229,7 @@ export default Vue.extend({
   &__alma
     cursor pointer
     text-decoration underline
-    text-decoration-color #FF9900
+    text-decoration-color $orange
     display flex
     padding 25px
     margin -25px

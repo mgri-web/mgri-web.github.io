@@ -55,7 +55,7 @@ export default Vue.extend({
   height 100vh
   position fixed
   z-index 10
-  background-color rgba(0,0,0, .7)
+  background-color $blackyBlack
   backdrop-filter blur(10px)
   display flex
   flex-direction column
