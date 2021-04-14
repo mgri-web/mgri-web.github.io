@@ -1,11 +1,14 @@
 <template>
   <div class="app">
+    <!-- Лоадинг-бар -->
     <transition>
       <LoadingBar v-if="showLoadingBar" />
     </transition>
+    <!-- Всплывашка сверху с оповещением -->
     <transition>
       <InformBanner v-if="errorMessage || informMessage" />
     </transition>
+    <!-- Поп-ап -->
     <transition name="appear">
       <FullscreenPopup v-if="popUpContent" />
     </transition>
