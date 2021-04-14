@@ -146,6 +146,8 @@ export default Vue.extend({
     width 100%
     flex-shrink 0
     overflow visible
+    +lt-md()
+      margin-bottom 30px
     +md()
       padding-top 40px
       margin-bottom 20px
